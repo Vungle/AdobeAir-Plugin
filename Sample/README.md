@@ -15,13 +15,7 @@ AIR application.
 ## Setup
 
 1. Install Adobe AIR SDK and adjust `PATH` environment variable to be able to run tools located in its `bin` directory.
-2. Download Vungle plugin for Adobe AIR from [Vungle Dashboard](https://v.vungle.com/dev/plugins).
-3. Clone this repository: `git clone git@github.com:Vungle/publisher-sample-air.git`.
-4. Copy the following files from the Vungle plugin archive to the `extensions` directory of the source tree:
-   * `com.vungle.extensions.Vungle.ane`
-   * `com.vungle.extensions.android.AndroidSupportLib.ane`
-   * `com.vungle.extensions.android.GooglePlayServices.ane`
-5. Put your code signing keys to the directory `keys` of the source tree.
+2. Put your code signing keys to the directory `keys` of the source tree.
    * For Android you can generate your own key using the command
      `keytool -genkey -v -keystore sample-android.p12 -alias alias_name -keyalg RSA -keysize 2048 -storetype pkcs12 -validity 10000`
    * For iOS you sould join Apple Developer Program to get a signing identity for your app. As a result you'll get two files: private key and provisioning profile. Without these files it is not possible to run the app on the device. iOS simulator is not supported. The files should be named `sample-ios.p12` and `sample-ios.mobileprovision`.
@@ -41,15 +35,15 @@ Let's take a closer look at what is being done to compile the application. On Wi
    ```
 
 2. AIR Developer Tool is called to assemble the platform-specific package.
-   
+
    For Android:
 
    ```
    adt -package -target apk-captive-runtime -keystore keys/sample-android.p12 -storetype pkcs12 -storepass 123 build/example.apk app.xml -C build sample.swf -C src/assets berlinSky.jpg londonSky.jpg sfSky.jpg -extdir extensions
    ```
-   
+
    For iOS:
-   
+
    ```
    adt -package -target ipa-test-interpreter -keystore keys/sample-ios.p12 -storetype pkcs12 -storepass 123 -provisioning-profile keys/sample-ios.mobileprovision build/example.ipa app.xml -C build sample.swf -C src/assets berlinSky.jpg londonSky.jpg sfSky.jpg Default@2x.png Default-568h@2x.png -extdir extensions
    ```
