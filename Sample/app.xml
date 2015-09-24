@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<application xmlns="http://ns.adobe.com/air/application/4.0">
+    
+    <id>com.vungle.anesample</id>
+    <filename>VungleAirSample</filename>
+    <name>Vungle Air Sample</name>
+    <versionNumber>1.0.0</versionNumber>
+    
+    <initialWindow>
+        <content>sample.swf</content>
+        <autoOrients>true</autoOrients>
+        <aspectRatio>any</aspectRatio>
+        <renderMode>cpu</renderMode>
+        <fullScreen>true</fullScreen>
+        <systemChrome>standard</systemChrome>
+    </initialWindow>
+    
+    <iPhone>
+        <requestedDisplayResolution>high</requestedDisplayResolution>
+        
+        <InfoAdditions>
+            <![CDATA[
+                <key>UIDeviceFamily</key>
+                <array>
+				<string>1</string>
+				<string>2</string>
+                </array>
+            ]]>
+            
+        </InfoAdditions>
+        
+    </iPhone>
+    
+    <android>
+        <manifestAdditions><![CDATA[
+			<manifest android:installLocation="auto">
+            <uses-permission android:name="android.permission.INTERNET" />
+            <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+            <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+            
+            <application>
+            <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />
+            <activity
+            android:name="com.vungle.publisher.FullScreenAdActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+            />
+            <service android:name="com.vungle.publisher.VungleService"/>
+            </application>
+			</manifest>
+		]]></manifestAdditions>
+    </android>
+    
+    
+    <extensions>
+        <extensionID>com.vungle.extensions.Vungle</extensionID>
+        <extensionID>com.vungle.extensions.android.GooglePlayServices</extensionID>
+        <extensionID>com.vungle.extensions.android.AndroidSupportLib</extensionID>
+	</extensions>
+</application>
