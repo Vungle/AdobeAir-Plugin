@@ -1,0 +1,3 @@
+build/
+keys/*.p12
+keys/*.mobileprovision

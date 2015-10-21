@@ -9,7 +9,7 @@ amxmlc -compiler.library-path=extensions/com.vungle.extensions.Vungle.ane \
 	-default-background-color=#b1b1b1 -debug src/VungleExample.as
 
 adt -package -target apk-captive-runtime -keystore keys/sample-android.p12 \
-	-storetype pkcs12 -storepass 123 build/example.apk app.xml \
+	-storetype pkcs12 -storepass 123456 build/example.apk app.xml \
 	-C build sample.swf \
 	-C src/assets berlinSky.jpg londonSky.jpg sfSky.jpg \
 	-extdir extensions
