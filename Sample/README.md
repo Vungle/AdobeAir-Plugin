@@ -31,7 +31,7 @@ Now the project should be ready to build.
 
 On Mac OS X just run `build-android.sh` to build the application for Android or `build-ios.sh` to build the application for iOS. Then install the resulting package `build/example.apk` or `build/example.ipa` to the device.
 
-Let's take a closer look at what is being done to compile the application. On Windows you can execute this commands manually.
+Let's take a closer look at what is being done to compile the application. On Windows you can execute these commands manually.
 
 1. AIR compiler is called to make an SWF file:
 
