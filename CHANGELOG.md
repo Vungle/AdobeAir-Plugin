@@ -1,5 +1,9 @@
 ## Changelog
 
+## VERSION 2.4.4
+* Integrated Android Publisher SDK v3.3.4
+* Fix: overlay icons may disappear after replay
+
 ## VERSION 2.4.3
 * Integrated Android Publisher SDK v3.3.3
 
