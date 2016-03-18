@@ -7,7 +7,7 @@ AIR application.
 
 ## Requirements
 
-* Mac OS X (Windows should also be OK, but not tested yet).
+* Mac OS X or Windows (see Adobe AIR SDK system requirements).
 * [Adobe AIR SDK](http://www.adobe.com/devnet/air/air-sdk-download.html).
 * [JRE](http://www.oracle.com/technetwork/java/javase/downloads/index.html) (required to run Adobe AIR SDK tools).
 * Apple Developer Program membership if you are going to create applications for iOS.
@@ -29,14 +29,14 @@ Now the project should be ready to build.
 
 ## Build instructons
 
-On Mac OS X just run `build-android.sh` to build the application for Android or `build-ios.sh` to build the application for iOS. Then install the resulting package `build/example.apk` or `build/example.ipa` to the device.
+Just run `build-android.sh` on Mac OS X (`build-android.bat` on Windows) to build the application for Android or `build-ios.sh` (`build-ios.bat`) to build the application for iOS. Then install the resulting package `build/example.apk` or `build/example.ipa` to the device.
 
-Let's take a closer look at what is being done to compile the application. On Windows you can execute these commands manually.
+Let's take a closer look at what is being done to compile the application.
 
 1. AIR compiler is called to make an SWF file:
 
    ```
-   amxmlc -compiler.library-path=extensions/com.vungle.extensions.Vungle.ane -output build/sample.swf -swf-version=23 -default-size=320,480 -default-background-color=#b1b1b1 -debug src/VungleExample.as
+   amxmlc -compiler.library-path=../AirExtension/extensions/com.vungle.extensions.Vungle.ane -output build/sample.swf -swf-version=23 -default-size=320,480 -default-background-color=#b1b1b1 -debug src/VungleExample.as
    ```
 
 2. AIR Developer Tool is called to assemble the platform-specific package.
@@ -44,13 +44,13 @@ Let's take a closer look at what is being done to compile the application. On Wi
    For Android:
 
    ```
-   adt -package -target apk-captive-runtime -keystore keys/sample-android.p12 -storetype pkcs12 -storepass 123456 build/example.apk app.xml -C build sample.swf -C src/assets berlinSky.jpg londonSky.jpg sfSky.jpg -extdir extensions
+   adt -package -target apk-captive-runtime -keystore keys/sample-android.p12 -storetype pkcs12 -storepass 123456 build/example.apk app.xml -C build sample.swf -C src/assets berlinSky.jpg londonSky.jpg sfSky.jpg -extdir ../AirExtension/extensions
    ```
 
    For iOS:
 
    ```
-   adt -package -target ipa-test-interpreter -keystore keys/sample-ios.p12 -storetype pkcs12 -storepass 123456 -provisioning-profile keys/sample-ios.mobileprovision build/example.ipa app.xml -C build sample.swf -C src/assets berlinSky.jpg londonSky.jpg sfSky.jpg Default@2x.png Default-568h@2x.png -extdir extensions
+   adt -package -target ipa-test-interpreter -keystore keys/sample-ios.p12 -storetype pkcs12 -storepass 123456 -provisioning-profile keys/sample-ios.mobileprovision build/example.ipa app.xml -C build sample.swf -C src/assets berlinSky.jpg londonSky.jpg sfSky.jpg Default@2x.png Default-568h@2x.png -extdir ../AirExtension/extensions
    ```
 
 ## About the app
