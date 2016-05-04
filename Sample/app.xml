@@ -60,6 +60,5 @@
     <extensions>
         <extensionID>com.vungle.extensions.Vungle</extensionID>
         <extensionID>com.vungle.extensions.android.GooglePlayServices</extensionID>
-        <extensionID>com.vungle.extensions.android.AndroidSupportLib</extensionID>
     </extensions>
 </application>
