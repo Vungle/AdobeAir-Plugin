@@ -1,5 +1,11 @@
 ## Changelog
 
+## VERSION 2.4.6
+* Disabled transition animation on Android
+
+## VERSION 2.4.5
+* Integrated Android Publisher SDK v3.3.5
+
 ## VERSION 2.4.4
 * Integrated Android Publisher SDK v3.3.4
 * Fix: overlay icons may disappear after replay

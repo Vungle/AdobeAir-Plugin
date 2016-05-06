@@ -4,8 +4,8 @@
     <id>com.vungle.anesample</id>
     <filename>VungleAirSample</filename>
     <name>Vungle Air Sample</name>
-    <versionNumber>2.4.4</versionNumber>
-    <versionLabel>v2.4.4</versionLabel>
+    <versionNumber>2.4.6</versionNumber>
+    <versionLabel>v2.4.6</versionLabel>
     
     <initialWindow>
         <content>sample.swf</content>
@@ -26,6 +26,11 @@
 				<string>1</string>
 				<string>2</string>
                 </array>
+		<key>NSAppTransportSecurity</key>
+		<dict>
+			<key>NSAllowsArbitraryLoads</key>
+			<true/>
+		</dict>
             ]]>
             
         </InfoAdditions>
@@ -35,8 +40,10 @@
     <android>
         <manifestAdditions><![CDATA[
 			<manifest android:installLocation="auto">
+            <uses-sdk android:minSdkVersion="11" android:targetSdkVersion="19" />
+            
             <uses-permission android:name="android.permission.INTERNET" />
-            <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+            <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" android:maxSdkVersion="18" />
             <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
             
             <application>
@@ -46,7 +53,6 @@
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
             />
-            <service android:name="com.vungle.publisher.VungleService"/>
             </application>
 			</manifest>
 		]]></manifestAdditions>
@@ -56,6 +62,5 @@
     <extensions>
         <extensionID>com.vungle.extensions.Vungle</extensionID>
         <extensionID>com.vungle.extensions.android.GooglePlayServices</extensionID>
-        <extensionID>com.vungle.extensions.android.AndroidSupportLib</extensionID>
 	</extensions>
 </application>
