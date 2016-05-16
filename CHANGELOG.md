@@ -1,5 +1,8 @@
 ## Changelog
 
+## VERSION 2.4.7
+* Integrated iOS Publisher SDK v3.2.1
+
 ## VERSION 2.4.6
 * Disabled transition animation on Android
 
