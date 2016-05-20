@@ -9,9 +9,8 @@ Once you've created an account you can follow our [Getting Started for Adobe Air
 * The Vungle Extension Requires Adobe AIR SDK 4.0 or higher
 
 ## Release Notes
-### 2.4.6.*
-* Integrated Android Publisher SDK v3.3.5
-* Disabled transition animation on Android
+### 2.4.7.*
+* Integrated iOS Publisher SDK v3.2.1
 
 ## License
 The Vungle Air Extension is available under a commercial license. See the LICENSE file for more info.
