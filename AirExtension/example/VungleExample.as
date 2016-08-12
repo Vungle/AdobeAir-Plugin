@@ -64,13 +64,6 @@ public class VungleExample extends Sprite
 		Vungle.vungle.addEventListener(VungleEvent.AD_FINISHED, onAdFinished);
 		// this event always fires when ad is displayed
 		Vungle.vungle.addEventListener(VungleEvent.AD_STARTED, onAdStarted);
-		// Dispatched when an ad has been viewed.  The watched and length properties of the event
-		// will be populated with the amount of the video watched, in seconds, and the total length
-		// of the video in seconds, respectively, which are useful for rewarding incentivized views.
-		// This event may not be called in some cases, such as when there is a pre-roll HTML asset
-		// in the advertisement and the user opts out of the ad before seeing the video.  Listen for
-		// VungleEvent.AD_FINISHED to capture an event whenever an ad has been dismissed.
-		Vungle.vungle.addEventListener(VungleEvent.AD_VIEWED, onAdViewed);
 		// this event fires when a log message is sent (iOS only)
 		Vungle.vungle.addEventListener(VungleEvent.AD_LOG, onAdLog);
 	}
@@ -139,7 +132,10 @@ public class VungleExample extends Sprite
 	private function onAdFinished(e:VungleEvent):void
 	{
 		// the ad is done and you can return to your game, etc.
-		log("Event: AdFinished: " + e.wasCallToActionClicked);
+		// for incentivized ads, you can use the wasSuccessfulView
+		// property to determine if a reward should be given.
+		log("Event: AdFinished: successful=" + e.wasSuccessfulView +
+			", cta=" + e.wasCallToActionClicked);
 	}
 
 	/** On Ad Started */
@@ -147,14 +143,6 @@ public class VungleExample extends Sprite
 	{
 		// an ad has begun- you may wish to mute your game sounds, pause, etc.
 		log("Event: AdStarted");
-	}
-
-	/** Ad Viewed */
-	private function onAdViewed(e:VungleEvent):void
-	{
-		// ad view complete. for incentivized ads, you can use the watched/length
-		// properties to determine if a reward should be given.
-		log("Event: AdViewed: Time: ("+e.watched+"/"+e.length+")");
 	}
 
 	/** On Ad Log */
