@@ -3,10 +3,10 @@ package
 import flash.display.Sprite;
 import flash.events.Event;
 import flash.geom.Rectangle;
+import flash.system.Capabilities;
 import flash.text.TextField;
 import com.vungle.extensions.*;
 import com.vungle.extensions.events.VungleEvent;
-import flash.utils.setTimeout;
 
 /** Vungle Example App */
 public class VungleExample extends Sprite
@@ -14,6 +14,20 @@ public class VungleExample extends Sprite
 	//
 	// Definitions
 	//
+
+	private var platformIds:Object = {
+		android: {
+			appId: "591236625b2480ac40000028",
+			placements: ["DEFAULT18080", "PLMT02I58745", "PLMT03R02739"]
+		},
+		ios: {
+			appId: "58fe200484fbd5b9670000e3",
+			placements: ["DEFAULT87043", "PLMT02I05269", "PLMT03R77999"]
+		}
+	};
+
+	private var ids:Object = Capabilities.version.substr(0, 3) == 'AND' ?
+		platformIds.android : platformIds.ios;
 
 	//
 	// Instance Variables
@@ -43,7 +57,7 @@ public class VungleExample extends Sprite
 
 		// with ios and android targets, with optional parameters: prefer portrait ads, location-enabled, age, gender.
 		try {
-			Vungle.create(["com.vungle.anesampleios", "com.vungle.anesample"]);
+			Vungle.create(ids.appId, ids.placements);
 		} catch (error:Error) {
 			//log("Vungle is not supported on this platform (not android or ios!)");
 			log(error.toString());
@@ -64,6 +78,10 @@ public class VungleExample extends Sprite
 		Vungle.vungle.addEventListener(VungleEvent.AD_FINISHED, onAdFinished);
 		// this event always fires when ad is displayed
 		Vungle.vungle.addEventListener(VungleEvent.AD_STARTED, onAdStarted);
+		// this event fires when an ad could not be played
+		Vungle.vungle.addEventListener(VungleEvent.AD_FAILED, onAdFailed);
+		// this event fires when SDK is initialized
+		Vungle.vungle.addEventListener(VungleEvent.AD_INIT, onAdInit);
 		// this event fires when a log message is sent (iOS only)
 		Vungle.vungle.addEventListener(VungleEvent.AD_LOG, onAdLog);
 	}
@@ -72,32 +90,32 @@ public class VungleExample extends Sprite
 	public function displayAd():void
 	{
 		// ensure an ad is available first.
-		if (!Vungle.vungle.isAdAvailable())
+		if (!Vungle.vungle.isAdAvailable(ids.placements[0]))
 		{
 			log("No Ad available!");
 			return;
 		}
 
 		log("Displaying interstitial ad...");
-		Vungle.vungle.playAd();
+		Vungle.vungle.playAd(ids.placements[0]);
 		log("Waiting for interstitial ad...");
 	}
 
 	/** Display Incentivized Ad */
 	public function displayIncentivizedAd():void
 	{
-		if (!Vungle.vungle.isAdAvailable())
+		if (!Vungle.vungle.isAdAvailable(ids.placements[1]))
 		{
 			log("No Ad available!");
+			Vungle.vungle.loadAd(ids.placements[1]);
 			return;
 		}
 
 		log("Display incentivized ad...");
 		var adConfig:VungleAdConfig = new VungleAdConfig();
 		adConfig.orientation = VungleOrientation.ANDROID_MATCH_VIDEO;
-		adConfig.incentivized = true;
 		adConfig.incentivizedUserId = "tagtest01";
-		Vungle.vungle.playAd(adConfig);
+		Vungle.vungle.playAd(ids.placements[1], adConfig);
 		log("Waiting for incentivized ad...");
 	}
 
@@ -143,6 +161,19 @@ public class VungleExample extends Sprite
 	{
 		// an ad has begun- you may wish to mute your game sounds, pause, etc.
 		log("Event: AdStarted");
+	}
+
+	/** On Ad Failed */
+	private function onAdFailed(e:VungleEvent):void
+	{
+		log("Event: AdFailed: " + e.message);
+	}
+
+	/** On Ad Init */
+	private function onAdInit(e:VungleEvent):void
+	{
+		log("Event: AdInit: init=" + e.isInitialized + ", message=" +
+			e.message);
 	}
 
 	/** On Ad Log */

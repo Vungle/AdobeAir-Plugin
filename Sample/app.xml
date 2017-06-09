@@ -6,6 +6,11 @@
     <name>Vungle Air Sample</name>
     <versionNumber>1.0.0</versionNumber>
 
+    <icon>
+	    <image57x57>VungleIcon.png</image57x57>
+	    <image114x114>VungleIcon@2x.png</image114x114>
+    </icon>
+
     <initialWindow>
         <content>sample.swf</content>
         <autoOrients>true</autoOrients>
