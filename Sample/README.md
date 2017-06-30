@@ -36,7 +36,7 @@ Let's take a closer look at what is being done to compile the application.
 1. AIR compiler is called to make an SWF file:
 
    ```
-   amxmlc -compiler.library-path=../AirExtension/extensions/com.vungle.extensions.Vungle.ane -output build/sample.swf -swf-version=23 -default-size=320,480 -default-background-color=#b1b1b1 -debug src/VungleExample.as
+   amxmlc -compiler.library-path=../AirExtension/extensions/com.vungle.extensions.Vungle.ane -output build/sample.swf -swf-version=23 -default-size=320,480 -default-background-color=#ffffff -debug src/VungleExample.as
    ```
 
 2. AIR Developer Tool is called to assemble the platform-specific package.
@@ -44,23 +44,23 @@ Let's take a closer look at what is being done to compile the application.
    For Android:
 
    ```
-   adt -package -target apk-captive-runtime -keystore keys/sample-android.p12 -storetype pkcs12 -storepass 123456 build/example.apk app.xml -C build sample.swf -C src/assets berlinSky.jpg londonSky.jpg sfSky.jpg -extdir ../AirExtension/extensions
+   adt -package -target apk-captive-runtime -keystore keys/sample-android.p12 -storetype pkcs12 -storepass 123456 build/example.apk app.xml -C build sample.swf -C src/assets VungleIcon.png VungleIcon@2x.png VungleLogo.png -extdir ../AirExtension/extensions
    ```
 
    For iOS:
 
    ```
-   adt -package -target ipa-test-interpreter -keystore keys/sample-ios.p12 -storetype pkcs12 -storepass 123456 -provisioning-profile keys/sample-ios.mobileprovision build/example.ipa app.xml -C build sample.swf -C src/assets berlinSky.jpg londonSky.jpg sfSky.jpg Default@2x.png Default-568h@2x.png -extdir ../AirExtension/extensions
+   adt -package -target ipa-test-interpreter -keystore keys/sample-ios.p12 -storetype pkcs12 -storepass 123456 -provisioning-profile keys/sample-ios.mobileprovision build/example.ipa app.xml -C build sample.swf -C src/assets VungleIcon.png VungleIcon@2x.png VungleLogo.png Default@2x.png Default-568h@2x.png -extdir ../AirExtension/extensions
    ```
 
 ## About the app
 
-The sample app has 3 buttons:
+The sample app has the following buttons:
 
-* “Play Ad” - to play an ad with default options; this is the most simple application.
-* “Play Incentivized Ad” - to play an incentivized ad; this requires a bit more code.
-* “Play Ad With Options” - to play an ad with specific options; this is very similar to playing an incentivized ad, but this time we change another option to start playing muted.
+* “Init SDK” - performs SDK initialization; this is the first action that you should do.
+* “Load” - loads an ad for the corresponding placement.
+* “Play” - plays an ad for the corresponding placement.
 
-At the top of the screen you can see the log messages.
+At the bottom of the screen you can see the log messages.
 
 Look into the source code `src/VungleExample.as` for details. There's a lot of comments to help you understand how it works.
