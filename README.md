@@ -3,7 +3,7 @@
 ## Getting Started
 To get up and running with Vungle, you'll need to [Create an Account With Vungle](https://v.vungle.com/dashboard) and [Add an Application to the Vungle Dashboard](https://support.vungle.com/hc/en-us/articles/210468678)
 
-Once you've created an account you can follow our [Getting Started for Adobe Air Guide](https://github.com/Vungle/AdobeAir-Plugin/blob/update-5.0.0/WelcometoVunglePlacements2017-06-12.pdf) to complete the integration. Remember to get the Vungle App ID from the Vungle dashboard.
+Once you've created an account you can follow our [Getting Started for Adobe Air Guide](WelcometoVunglePlacements2017-06-23.pdf) to complete the integration. Remember to get the Vungle App ID from the Vungle dashboard.
 
 ### Requirements
 * The Vungle Extension Requires Adobe AIR SDK 4.0 or higher
