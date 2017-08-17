@@ -10,7 +10,7 @@ Once you've created an account you can follow our [Getting Started for Adobe Air
 
 ## Release Notes
 ### 5.1.*
-* Integrated iOS Publisher SDK v5.1.0
+* Integrated iOS Publisher SDK v5.1.1
 * Integrated Android Publisher SDK v5.1.0
 
 ## Known issues
