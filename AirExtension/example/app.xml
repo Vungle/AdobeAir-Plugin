@@ -4,8 +4,8 @@
     <id>com.vungle.anesample</id>
     <filename>VungleAirSample</filename>
     <name>Vungle Air Sample</name>
-    <versionNumber>5.1.0</versionNumber>
-    <versionLabel>v5.1.0</versionLabel>
+    <versionNumber>5.1.1</versionNumber>
+    <versionLabel>v5.1.1</versionLabel>
     
     <initialWindow>
         <content>sample.swf</content>
