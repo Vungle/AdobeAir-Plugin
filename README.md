@@ -9,8 +9,8 @@ Once you've created an account you can follow our [Getting Started for Adobe Air
 * The Vungle Extension Requires Adobe AIR SDK 4.0 or higher
 
 ## Release Notes
-### 5.1.*
-* Integrated iOS Publisher SDK v5.1.1
+### 5.2.*
+* Integrated iOS Publisher SDK v5.2.0
 * Integrated Android Publisher SDK v5.1.0
 
 ## Known issues
