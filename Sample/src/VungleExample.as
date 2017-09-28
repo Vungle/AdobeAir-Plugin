@@ -1,4 +1,4 @@
-package
+﻿package
 {
 	import com.vungle.extensions.*;
 	import com.vungle.extensions.events.VungleEvent;
@@ -19,12 +19,12 @@ package
 
 		private var platformIds:Object = {
 			android: {
-				appId: "591236625b2480ac40000028",
-				placements: ["DEFAULT18080", "PLMT02I58745", "PLMT03R02739"]
+				appId: "598a456f8d29a1a3700025a4",
+				placements: ["DEFAULT05305", "FLEXIEL41505", "REWARDE65069"]
 			},
 			ios: {
-				appId: "58fe200484fbd5b9670000e3",
-				placements: ["DEFAULT87043", "PLMT02I05269", "PLMT03R77999"]
+				appId: "598a40a15169a3b070002568",
+				placements: ["DEFAULT71817", "FLEXIEE29372", "REWARDE56627"]
 			}
 		};
 
@@ -128,6 +128,7 @@ package
 			var adConfig:VungleAdConfig = new VungleAdConfig();
 			adConfig.orientation = VungleOrientation.ANDROID_MATCH_VIDEO |
 				VungleOrientation.IOS_LANDSCAPE;
+			adConfig.soundEnabled = false;
 
 			// play ad with options
 			log(placement + ": displaying ad...");
@@ -147,14 +148,19 @@ package
 
 			// use VungleAdConfig to set custom ad options
 			var adConfig:VungleAdConfig = new VungleAdConfig();
-			adConfig.incentivizedUserId = "test_user_id";
+			adConfig.incentivizedUserId = "the_user_id_formerly_know_as_test";
 			adConfig.incentivizedCancelDialogBodyText =
-				"If the video isn't completed you won't " +
-				"get your reward! Are you sure you want " +
-				"to close early?";
-			adConfig.incentivizedCancelDialogCloseButtonText = "Close";
-			adConfig.incentivizedCancelDialogKeepWatchingButtonText = "Keep Watching";
-			adConfig.incentivizedCancelDialogTitle = "Careful!";
+				"Want a reward? " +
+				"You better let that video complete then " +
+				"Know what I'm saying?";
+			adConfig.incentivizedCancelDialogCloseButtonText = "Boogied out";
+			adConfig.incentivizedCancelDialogKeepWatchingButtonText = "Keep Groovin";
+			adConfig.incentivizedCancelDialogTitle = "Watch Out!";
+
+			android: {
+    			adConfig.backButtonImmediatelyEnabled = true;
+    			adConfig.immersiveMode = true;
+			};
 
 			// play ad with options
 			log(placement + ": displaying ad...");
