@@ -1,0 +1,153 @@
+v5.3.2
+- integrated Android Publisher SDK v5.3.2
+- integrated iOS Publisher SDK v5.3.2
+
+v5.3.0
+- integrated Android Publisher SDK v5.3.0
+- integrated iOS Publisher SDK v5.3.0
+
+v5.2.0
+- integrated iOS Publisher SDK v5.2.0
+
+v5.1.1
+- integrated iOS Publisher SDK v5.1.1
+
+v5.1.0
+- integrated Android Publisher SDK v5.1.0
+- integrated iOS Publisher SDK v5.1.0
+
+v5.0.0
+- integrated Android Publisher SDK v5.0.0
+- integrated iOS Publisher SDK v5.0.0
+
+v3.1.0
+- integrated Android Publisher SDK v4.1.0
+
+v3.0.8
+- integrated iOS Publisher SDK v4.1.0
+
+v3.0.7
+- integrated iOS Publisher SDK v4.0.9
+
+v3.0.6
+- integrated iOS Publisher SDK v4.0.8
+
+v3.0.5
+- integrated Android Publisher SDK v4.0.3
+
+v3.0.4
+- integrated iOS Publisher SDK v4.0.6
+
+v3.0.3
+- integrated iOS Publisher SDK v3.2.2
+
+v3.0.2
+- integrated Android Publisher SDK v4.0.2
+
+v3.0.1
+- API updated for compatibility with Android Publisher SDK v4.0.0
+
+v3.0.0
+- integrated Android Publisher SDK v4.0.0
+
+v2.4.7
+- integrated iOS Publisher SDK v3.2.1
+
+v2.4.6
+- disabled transition animation on Android
+
+v2.4.5
+- integrated Android Publisher SDK v3.3.5
+
+v2.4.4
+- integrated Android Publisher SDK v3.3.4
+- fix: overlay icons may disappear after replay
+
+v2.4.3
+- integrated Android Publisher SDK v3.3.3
+
+v2.4.2
+- integrated iOS Publisher SDK v3.2.0
+
+v2.4.1
+- integrated Android Publisher SDK v3.3.2
+
+v2.4.0
+- new API provides access to all the advanced settings of the Publisher SDK
+- some old methods are deprecated but kept for backward compatibility
+- integrated iOS Publisher SDK v3.1.2
+- integrated Android Publisher SDK v3.3.1
+- fixed issues with user name for incentivized ads on iOS
+- fixed wasCallToActionClicked reporting on iOS
+
+v2.3.1
+- integrated iOS Publisher SDK v3.0.13
+
+v 2.3.0
+- integrated iOS Publisher SDK v3.0.12
+- integrated Android Publisher SDK v3.3.0
+
+v2.2.3
+- fixed iOS implementation to properly report video length attribute in AD_VIEWED event
+
+v2.2.2
+- built using Adobe Air SDK v16.0 for compatibility with 64 bit iOS implementations
+
+v2.2.1
+- integrated iOS Publisher SDK v3.0.11
+- integrated Android Publisher SDK v3.2.2
+- deprecate isSupported() in favor of throwing an error from Vungle.create()
+- integrate local sonatype repo for dependencies
+- enable auto uploading to s3
+- include the VungleApi swc in the distribution (some ides require this)
+- reformat the ios ad_viewed event to resemble the android version
+
+v2.2.0
+- fixed an issue with incentivized ads not working
+- fixed an issue with buttons not showing up on android
+
+v2.1.0
+- integrated Android Publisher SDK v3.2.0
+
+v2.0.4
+- removed google-play-services left in main extension
+
+v2.0.3
+- integrated iOS Publisher SDK v3.0.8
+- integrated Android Publisher SDK v3.1.1
+- added separate ane file for Google Play Services
+
+v2.0.2
+- integrated Android Publisher SDK v3.0.7
+
+v2.0.1
+- integrated Android Publisher SDK v3.0.6
+
+v2.0.0
+- integrated iOS Publisher SDK v3.0.6
+- integrated Android Publisher SDK v3.0.5
+
+v1.2.0
+- integrated Android Publisher SDK v1.3.9
+
+v1.1.5
+- integrated iOS Publisher SDK v1.5.1
+- integrated Android Publisher SDK v1.3.3
+
+v1.1.4
+- integrated iOS Publisher SDK v1.4.3
+
+v1.1.3
+- integrated iOS Publisher SDK v1.4.2
+
+v1.1.2
+- integrated iOS Publisher SDK v1.4.1
+
+v1.1.1
+- integrated iOS Publisher SDK v1.4.0
+
+v1.1.0
+- integrated Android Publisher SDK v1.3.1
+
+v1.0.0
+- initial release.
