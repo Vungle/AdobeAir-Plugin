@@ -1,3 +1,6 @@
+v5.4.0
+- integrated iOS Publisher SDK v5.4.0
+
 v5.3.2
 - integrated Android Publisher SDK v5.3.2
 - integrated iOS Publisher SDK v5.3.2
