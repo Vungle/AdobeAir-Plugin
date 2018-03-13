@@ -44,13 +44,13 @@ Let's take a closer look at what is being done to compile the application.
    For Android:
 
    ```
-   adt -package -target apk-captive-runtime -keystore keys/sample-android.p12 -storetype pkcs12 -storepass 123456 build/example.apk app.xml -C build sample.swf -C src/assets VungleIcon.png VungleIcon@2x.png VungleLogo.png -extdir ../AirExtension/extensions
+   adt -package -target apk-captive-runtime -keystore keys/sample-android.p12 -storetype pkcs12 -storepass 123456 build/example.apk app.xml -C build sample.swf -C src/assets VungleIcon60x60@2x.png VungleIcon60x60@3x.png VungleIcon76x76.png VungleIcon76x76@2x.png VungleIcon83.5x83.5@2x.png VungleLogo.png -extdir ../AirExtension/extensions
    ```
 
    For iOS:
 
    ```
-   adt -package -target ipa-test-interpreter -keystore keys/sample-ios.p12 -storetype pkcs12 -storepass 123456 -provisioning-profile keys/sample-ios.mobileprovision build/example.ipa app.xml -C build sample.swf -C src/assets VungleIcon.png VungleIcon@2x.png VungleLogo.png Default@2x.png Default-568h@2x.png -extdir ../AirExtension/extensions
+   adt -package -target ipa-test-interpreter -keystore keys/sample-ios.p12 -storetype pkcs12 -storepass 123456 -provisioning-profile keys/sample-ios.mobileprovision build/example.ipa app.xml -C build sample.swf -C src/assets VungleIcon60x60@2x.png VungleIcon60x60@3x.png VungleIcon76x76.png VungleIcon76x76@2x.png VungleIcon83.5x83.5@2x.png VungleLogo.png Assets.car Default@2x~iphone.png Default-568h@2x~iphone.png -extdir ../AirExtension/extensions
    ```
 
 ## About the app

@@ -11,5 +11,7 @@ amxmlc -compiler.library-path=../AirExtension/extensions/com.vungle.extensions.V
 adt -package -target apk-captive-runtime -keystore keys/sample-android.p12 \
 	-storetype pkcs12 -storepass 123456 build/example.apk app.xml \
 	-C build sample.swf \
-	-C src/assets VungleIcon.png VungleIcon@2x.png VungleLogo.png \
+	-C src/assets VungleIcon60x60@2x.png VungleIcon60x60@3x.png \
+	VungleIcon76x76.png VungleIcon76x76@2x.png \
+	VungleIcon83.5x83.5@2x.png VungleLogo.png \
 	-extdir ../AirExtension/extensions
