@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
-<application xmlns="http://ns.adobe.com/air/application/4.0">
+<application xmlns="http://ns.adobe.com/air/application/28.0">
 
     <id>com.vungle.anesample</id>
     <filename>VungleAirSample</filename>
@@ -7,8 +7,11 @@
     <versionNumber>1.0.0</versionNumber>
 
     <icon>
-	    <image57x57>VungleIcon.png</image57x57>
-	    <image114x114>VungleIcon@2x.png</image114x114>
+	    <image76x76>VungleIcon76x76.png</image76x76>
+	    <image152x152>VungleIcon76x76@2x.png</image152x152>
+	    <image167x167>VungleIcon83.5x83.5@2x.png</image167x167>
+	    <image120x120>VungleIcon60x60@2x.png</image120x120>
+	    <image180x180>VungleIcon60x60@3x.png</image180x180>
     </icon>
 
     <initialWindow>

@@ -177,7 +177,10 @@
 		{
 			// SDK is initialized
 			// now you can call loadAd(), playAd() etc.
-			log("Event: AdInit: " + e.isInitialized);
+			var message:String = "Event: AdInit: " + e.isInitialized;
+			if (!e.isInitialized)
+				message += ', message = ' + e.message;
+			log(message);
 			if (e.isInitialized) {
 				placementView2.loadButton.enabled = true;
 				placementView3.loadButton.enabled = true;
@@ -188,8 +191,11 @@
 		private function onAdPlayable(e:VungleEvent):void
 		{
 			// an ad is available - you can call playAd()
-			log("Event: AdPlayable: " + e.isAdPlayable +
-				", placement = " + e.placement);
+			var message:String = "Event: AdPlayable: " +
+				e.isAdPlayable + ", placement = " + e.placement;
+			if (e.message)
+				message += ', message = ' + e.message;
+			log(message);
 			if (e.placement == ids.placements[0]) {
 				placementView1.playButton.enabled = e.isAdPlayable;
 			}
