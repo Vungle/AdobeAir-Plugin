@@ -4,8 +4,8 @@
     <id>com.vungle.anesample</id>
     <filename>VungleAirSample</filename>
     <name>Vungle Air Sample</name>
-    <versionNumber>3.1.0</versionNumber>
-    <versionLabel>v3.1.0</versionLabel>
+    <versionNumber>6.2.0</versionNumber>
+    <versionLabel>v6.2.0</versionLabel>
     
     <initialWindow>
         <content>sample.swf</content>
@@ -39,29 +39,80 @@
     
     <android>
         <manifestAdditions><![CDATA[
-			<manifest android:installLocation="auto">
-            <uses-sdk android:minSdkVersion="11" android:targetSdkVersion="19" />
-            
-            <uses-permission android:name="android.permission.INTERNET" />
-            <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" android:maxSdkVersion="18" />
-            <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-            
-            <application>
-            <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />
-	    <activity android:name="com.vungle.publisher.VideoFullScreenAdActivity"
-		    android:configChanges="keyboardHidden|orientation|screenSize"
-		    android:theme="@android:style/Theme.NoTitleBar.Fullscreen"/>
-	    <activity android:name="com.vungle.publisher.MraidFullScreenAdActivity"
-		    android:configChanges="keyboardHidden|orientation|screenSize"
-		    android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"/>
-            </application>
-			</manifest>
-		]]></manifestAdditions>
+            <manifest android:installLocation="auto">
+
+                <uses-sdk android:minSdkVersion="14" android:targetSdkVersion="25" />
+
+                <uses-permission android:name="android.permission.INTERNET" />
+                <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+                <uses-permission android:name="android.permission.WAKE_LOCK" />
+                <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+                <application>
+
+                    <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />
+
+                    <!-- vungle sdk -->
+                    <activity
+                        android:name="com.vungle.warren.ui.VungleActivity"
+                        android:configChanges="keyboardHidden|orientation|screenSize|screenLayout|smallestScreenSize"
+                        android:launchMode="singleTop"
+                        android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+                    <!-- android-job -->
+                    <service
+                        android:name="com.evernote.android.job.v21.PlatformJobService"
+                        android:exported="false"
+                        android:permission="android.permission.BIND_JOB_SERVICE" />
+                    <service
+                        android:name="com.evernote.android.job.v14.PlatformAlarmService"
+                        android:exported="false"
+                        android:permission="android.permission.BIND_JOB_SERVICE" />
+                    <service
+                        android:name="com.evernote.android.job.v14.PlatformAlarmServiceExact"
+                        android:exported="false" />
+                    <receiver
+                        android:name="com.evernote.android.job.v14.PlatformAlarmReceiver"
+                        android:exported="false" >
+                        <intent-filter>
+                            <!-- Keep the filter for legacy intents -->
+                            <action android:name="com.evernote.android.job.v14.RUN_JOB" />
+                            <action android:name="net.vrallev.android.job.v14.RUN_JOB" />
+                        </intent-filter>
+                    </receiver>
+                    <receiver
+                        android:name="com.evernote.android.job.JobBootReceiver"
+                        android:exported="false" >
+                        <intent-filter>
+                            <action android:name="android.intent.action.BOOT_COMPLETED" />
+                            <action android:name="android.intent.action.QUICKBOOT_POWERON" />
+                            <action android:name="com.htc.intent.action.QUICKBOOT_POWERON" />
+                            <action android:name="android.intent.action.MY_PACKAGE_REPLACED" />
+                        </intent-filter>
+                    </receiver>
+                    <service
+                        android:name="com.evernote.android.job.gcm.PlatformGcmService"
+                        android:enabled="false"
+                        android:exported="true"
+                        android:permission="com.google.android.gms.permission.BIND_NETWORK_TASK_SERVICE" >
+                        <intent-filter>
+                            <action android:name="com.google.android.gms.gcm.ACTION_TASK_READY" />
+                        </intent-filter>
+                    </service>
+                    <service
+                        android:name="com.evernote.android.job.JobRescheduleService"
+                        android:exported="false"
+		        android:permission="android.permission.BIND_JOB_SERVICE" />
+
+                </application>
+            </manifest>
+        ]]></manifestAdditions>
     </android>
     
     
     <extensions>
         <extensionID>com.vungle.extensions.Vungle</extensionID>
         <extensionID>com.vungle.extensions.android.GooglePlayServices</extensionID>
+        <extensionID>com.vungle.extensions.android.AndroidSupportLib</extensionID>
 	</extensions>
 </application>
