@@ -3,13 +3,43 @@
 ## Getting Started
 To get up and running with Vungle, you'll need to [Create an Account With Vungle](https://v.vungle.com/dashboard) and [Add an Application to the Vungle Dashboard](https://support.vungle.com/hc/en-us/articles/210468678)
 
-Once you've created an account you can follow our [Getting Started for Adobe Air Guide](https://support.vungle.com/hc/en-us/articles/204755040-Get-Started-with-Vungle-Adobe-Air) to complete the integration. Remember to get the Vungle App ID from the Vungle dashboard.
+Once you've created an account you can follow our [Getting Started for Adobe Air Guide v6](https://support.vungle.com/hc/en-us/articles/360003412031) to complete the integration. Remember to get the Vungle App ID from the Vungle dashboard.
 
 ### Requirements
 * The Vungle Extension Requires Adobe AIR SDK 4.0 or higher
 
 ## Release Notes
-### 3.1.*
+
+## VERSION 6.2.0
+* integrated iOS Publisher SDK v6.2.0
+* integrated Android Publisher SDK v6.2.5
+
+## VERSION 5.4.0
+* integrated iOS Publisher SDK v5.4.0
+
+## VERSION 5.3.2
+* integrated Android Publisher SDK v5.3.2
+* integrated iOS Publisher SDK v5.3.2
+
+## VERSION 5.3.0
+* integrated Android Publisher SDK v5.3.0
+* integrated iOS Publisher SDK v5.3.0
+
+## VERSION 5.2.0
+* integrated iOS Publisher SDK v5.2.0
+
+## VERSION 5.1.1
+* integrated iOS Publisher SDK v5.1.1
+
+## VERSION 5.1.0
+* integrated Android Publisher SDK v5.1.0
+* integrated iOS Publisher SDK v5.1.0
+
+## VERSION 5.0.0
+* integrated Android Publisher SDK v5.0.0
+* integrated iOS Publisher SDK v5.0.0
+
+## 3.1.*
 * Integrated iOS Publisher SDK v4.1.0
 * Integrated Android Publisher SDK v4.1.0
 
