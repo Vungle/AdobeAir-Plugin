@@ -19,13 +19,8 @@
 
 		private var platformIds:Object = {
 			android: {
-				/*appId: "592754a11cb660c05500000b",
-				placements: ["DEFAULT62446", "PLACEME67081", "PLACEME06478"]*/
-				
-				appId: "5ae0db55e2d43668c97bd65e",
-				placements: ["DEFAULT-6595425", "LEGACY_REWARDED-2115035", "DYNAMIC_TEMPLATE_INTERSTITIAL-6969365"]
-				
-				
+				appId: "592754a11cb660c05500000b",
+				placements: ["DEFAULT62446", "PLACEME67081", "PLACEME06478"]
 			},
 			ios: {
 				appId: "592757da73883d212c00000b",
