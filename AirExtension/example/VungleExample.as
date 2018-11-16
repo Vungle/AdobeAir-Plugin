@@ -1,4 +1,4 @@
-package
+﻿package
 {
 import flash.display.Sprite;
 import flash.events.Event;
@@ -57,7 +57,7 @@ public class VungleExample extends Sprite
 
 		// with ios and android targets, with optional parameters: prefer portrait ads, location-enabled, age, gender.
 		try {
-			Vungle.create(ids.appId, ids.placements);
+			Vungle.create(ids.appId);
 		} catch (error:Error) {
 			//log("Vungle is not supported on this platform (not android or ios!)");
 			log(error.toString());
@@ -84,6 +84,16 @@ public class VungleExample extends Sprite
 		Vungle.vungle.addEventListener(VungleEvent.AD_INIT, onAdInit);
 		// this event fires when a log message is sent (iOS only)
 		Vungle.vungle.addEventListener(VungleEvent.AD_LOG, onAdLog);
+		
+		//Set GDPR consent status
+			//Vungle.vungle.updateConsentStatus(1,"Adobe Air consent v1.0"); //Opted_in
+			//Vungle.vungle.updateConsentStatus(2,"Adobe Air consent v1.0"); //Opted_out
+			
+			 //var status:int = Vungle.vungle.getConsentStatus();            //Get consent status
+			//log("VungleIT - " + status + ": displaying status...");
+			
+			//var version:String = Vungle.vungle.getConsentMessageVersion(); //Get consent version string
+			//log("VungleIT - " + version + ": displaying version...");
 	}
 
 	/** Display Ad */
