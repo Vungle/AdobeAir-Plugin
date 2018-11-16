@@ -40,7 +40,7 @@
     <android>
         <manifestAdditions><![CDATA[
 			<manifest android:installLocation="auto">
-            <uses-sdk android:minSdkVersion="11" android:targetSdkVersion="19" />
+            <uses-sdk android:minSdkVersion="14" android:targetSdkVersion="28" />
             
             <uses-permission android:name="android.permission.INTERNET" />
             <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" android:maxSdkVersion="18" />
@@ -48,12 +48,19 @@
             
             <application>
             <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />
-	    <activity android:name="com.vungle.publisher.VideoFullScreenAdActivity"
-		    android:configChanges="keyboardHidden|orientation|screenSize"
-		    android:theme="@android:style/Theme.NoTitleBar.Fullscreen"/>
-	    <activity android:name="com.vungle.publisher.MraidFullScreenAdActivity"
-		    android:configChanges="keyboardHidden|orientation|screenSize"
-		    android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"/>
+             <!--Vungle Activities-->
+             <activity
+                 android:name="com.vungle.warren.ui.VungleActivity"
+                 android:configChanges="keyboardHidden|orientation|screenSize|screenLayout|smallestScreenSize"
+                 android:launchMode="singleTop"
+                 android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+             <activity
+                 android:name="com.vungle.warren.ui.VungleFlexViewActivity"
+                 android:configChanges="keyboardHidden|orientation|screenSize|screenLayout|smallestScreenSize"
+                 android:hardwareAccelerated="true"
+                 android:launchMode="singleTop"
+                 android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+            
             </application>
 			</manifest>
 		]]></manifestAdditions>
